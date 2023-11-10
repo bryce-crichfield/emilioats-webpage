@@ -1,34 +1,32 @@
-// Navbar Autohide is only enabled on screens larger than 768px
-if (window.matchMedia("(min-width: 768px)").matches) {
-  // Navbar Hides after Scrolling
-  var prevScrollpos = window.pageYOffset;
-  var timeout = null;
-  window.onscroll = function () {
-    var currentScrollPos = window.pageYOffset;
-    if (prevScrollpos != currentScrollPos) {
-      document.querySelector(".navbar").style.top = "0";
-      clearTimeout(timeout);
-      timeout = setTimeout(function () {
-        // if hovering don't hide navbar
-        if (!$(".navbar").is(":hover"))
-        document.querySelector(".navbar").style.top = "-65px"; // adjust this value to match the height of your navbar
-      }, 750);
-    }
-    else {
-      document.querySelector(".navbar").style.top = "-65px"; // adjust this value to match the height of your navbar
-      clearTimeout(timeout);
-    }
-    prevScrollpos = currentScrollPos;
+// Only enable navbar hiding on desktop
+if ($(window).width() > 768) {
+  const hideNavbar = () => {
+    $(".navbar").css("top", "-65px");
   };
 
-  // Navbar Shows on Hover
-  $(document).ready(function () {
-    $(".navbar").mouseenter(function () {
-      $(this).css("top", "0");
-    });
+  const showNavbar = () => {
+    $(".navbar").css("top", "0");
+  };
 
-    $(".navbar").mouseleave(function () {
-      $(this).css("top", "-65px"); // adjust this value to match the height of your navbar
-    });
+  const navbarOnScroll = () => {
+    const timeout = () => {
+      console.log("timeout");
+      if (!$(".navbar").is(":hover")) {
+        hideNavbar();
+      }
+    };
+
+    showNavbar();
+    clearTimeout(timeout);
+    setTimeout(timeout, 1000);
+  };
+
+  $(document).ready(() => {
+    $(window).scroll(navbarOnScroll);
+  });
+
+  $(document).ready(() => {
+    $(".navbar").mouseenter(showNavbar);
+    $(".navbar").mouseleave(hideNavbar);
   });
 }
