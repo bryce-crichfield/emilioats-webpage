@@ -20,12 +20,12 @@ const navbarOnScroll = () => {
 };
 
 $(document).ready(() => {
-  if ($(window).window < 768) return;
+  if ($(window).width() < 768) return;
   $(window).scroll(navbarOnScroll);
 });
 
 $(document).ready(() => {
-  if ($(window).window < 768) return;
+  if ($(window).width() < 768) return;
   $(".navbar").mouseenter(showNavbar);
   $(".navbar").mouseleave(hideNavbar);
 });
