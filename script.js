@@ -1,32 +1,31 @@
-// Only enable navbar hiding on desktop
-if ($(window).width() > 768) {
-  const hideNavbar = () => {
-    $(".navbar").css("top", "-65px");
+const hideNavbar = () => {
+  $(".navbar").css("top", "-65px");
+};
+
+const showNavbar = () => {
+  $(".navbar").css("top", "0");
+};
+
+const navbarOnScroll = () => {
+  const timeout = () => {
+    console.log("timeout");
+    if (!$(".navbar").is(":hover")) {
+      hideNavbar();
+    }
   };
 
-  const showNavbar = () => {
-    $(".navbar").css("top", "0");
-  };
+  showNavbar();
+  clearTimeout(timeout);
+  setTimeout(timeout, 1000);
+};
 
-  const navbarOnScroll = () => {
-    const timeout = () => {
-      console.log("timeout");
-      if (!$(".navbar").is(":hover")) {
-        hideNavbar();
-      }
-    };
+$(document).ready(() => {
+  if ($(window).window < 768) return;
+  $(window).scroll(navbarOnScroll);
+});
 
-    showNavbar();
-    clearTimeout(timeout);
-    setTimeout(timeout, 1000);
-  };
-
-  $(document).ready(() => {
-    $(window).scroll(navbarOnScroll);
-  });
-
-  $(document).ready(() => {
-    $(".navbar").mouseenter(showNavbar);
-    $(".navbar").mouseleave(hideNavbar);
-  });
-}
+$(document).ready(() => {
+  if ($(window).window < 768) return;
+  $(".navbar").mouseenter(showNavbar);
+  $(".navbar").mouseleave(hideNavbar);
+});
