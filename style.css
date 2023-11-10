@@ -50,16 +50,22 @@ a {
   font-size: xx-large;
 }
 
-.navbar-brand:hover {
-  font-size: xxx-large;
+.navbar-toggler-icon {
+    background-image: url("assets/images/toggler.svg");
+}
+
+@media (min-width: 768px) {
+  .navbar-brand:hover {
+    font-size: xxx-large;
+  }
+
+  .nav-link:hover {
+    font-size: x-large;
+  }
 }
 
 .nav-link {
   font-size: large;
-}
-
-.nav-link:hover {
-  font-size: x-large;
 }
 
 .starry {
@@ -114,6 +120,46 @@ a {
   font-size: 2.5rem;
   color: white;
   text-shadow: 2px 2px black;
+}
+
+#hero img {
+  animation: hero-img-intro 3s ease-in-out;
+}
+
+#hero p {
+  animation: hero-text-intro 3s ease-in-out;
+}
+
+#hero h1 {
+  animation: hero-text-intro 3s ease-in-out;
+}
+
+#hero button {
+  animation: hero-text-intro 3s ease-in-out;
+}
+
+@keyframes hero-img-intro {
+  0% {
+    opacity: 0;
+    transform: translateX(-400px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+@keyframes hero-text-intro {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
 }
 
 .carousel-item {

@@ -2,19 +2,14 @@
 <html lang="en" data-bs-theme="dark">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>emilioats - music</title>
     <!-- Bootstrap CSS -->
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     />
-    <!--- Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 
     <script src="script.js"></script>
 
@@ -36,7 +31,7 @@
         aria-expanded="false"
         aria-label="Toggle navigation"
       >
-        <span class="navbar-toggler-icon"></span>
+        <span class="navbar-toggler-icon text-white"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
@@ -70,6 +65,12 @@
           <div class="col-md-6 text-center text-md-left">
             <h1>Emilioats</h1>
             <p>Musician. Composer. Beatmaker.</p>
+            <button
+              class="btn btn-primary mb-4"
+              style="background-color: black; border-color: white"
+            >
+              Stream "Still Numb"
+            </button>
           </div>
         </div>
       </div>
@@ -86,6 +87,8 @@
           ></li>
           <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
           <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
         </ol>
         <!-- SLIDES -->
         <div class="carousel-inner">
@@ -107,6 +110,32 @@
               <div class="text-center spotify-embed">
                 <iframe
                   src="https://open.spotify.com/embed/track/4LYRChJpx7OzHNwUvfvB94?si=f9efd4470dd6488b"
+                  allowtransparency="true"
+                  allow="encrypted-media"
+                  frameborder="0"
+                  style="transform: translateY(25%); height: 100%; width: 100%"
+                ></iframe>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="d-flex align-items-center justify-content-center h-100">
+              <div class="text-center spotify-embed">
+                <iframe
+                  src="https://open.spotify.com/embed/track/1QDyArJ78Sak7yW4VpMZTe?si=7dde3c838d7546c8"
+                  allowtransparency="true"
+                  allow="encrypted-media"
+                  frameborder="0"
+                  style="transform: translateY(25%); height: 100%; width: 100%"
+                ></iframe>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="d-flex align-items-center justify-content-center h-100">
+              <div class="text-center spotify-embed">
+                <iframe
+                  src="https://open.spotify.com/embed/track/1X1tDW48vm1Z2rQQAO21uA?si=17936f0fff3948b5"
                   allowtransparency="true"
                   allow="encrypted-media"
                   frameborder="0"
@@ -334,7 +363,7 @@
               </div>
               <button
                 type="submit"
-                class="btn btn-primary"
+                class="btn btn-primary mb-4"
                 style="background-color: black; border-color: white"
               >
                 Submit
@@ -347,8 +376,8 @@
 
     <!-- FOOTER SECTION -->
     <footer
-      class="footer-section"
-      style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"
+      class="footer-section d-flex align-items-end justify-content-center"
+      style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; height: 25vh;"
     >
       <div class="container">
         <div class="row">
