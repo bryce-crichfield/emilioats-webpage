@@ -9,6 +9,8 @@ if (window.matchMedia("(min-width: 768px)").matches) {
       document.querySelector(".navbar").style.top = "0";
       clearTimeout(timeout);
       timeout = setTimeout(function () {
+        // if hovering don't hide navbar
+        if (!$(".navbar").is(":hover"))
         document.querySelector(".navbar").style.top = "-65px"; // adjust this value to match the height of your navbar
       }, 750);
     }
