@@ -30,6 +30,7 @@ $(document).ready(() => {
   $(".navbar").mouseleave(hideNavbar);
 });
 
+
 function doTypewriter(id, text) {
   var i = 0;
   const typeWriter = () => {
@@ -43,4 +44,9 @@ function doTypewriter(id, text) {
   typeWriter();
 }
 
-doTypewriter("hero-subtitle", "Musician. Composer. Beatmaker.");
+$(document).ready(() => {
+  doTypewriter("hero-subtitle", "Musician. Composer. Beatmaker.");
+});
+
+
+
