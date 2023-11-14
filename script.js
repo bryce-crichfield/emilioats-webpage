@@ -30,35 +30,17 @@ $(document).ready(() => {
   $(".navbar").mouseleave(hideNavbar);
 });
 
-// // Select all elements with the 'animate' class
-// const elements = document.querySelectorAll(".animate");
-
-// // Define the Intersection Observer
-// const observer = new IntersectionObserver((entries, observer) => {
-//   entries.forEach((entry) => {
-//     // If the element is in the viewport, add the 'run-animation' class
-//     if (entry.isIntersecting) {
-//       console.log("in viewport");
-//       entry.target.classList.add("animation-typewriter");
-//       // Stop observing the element so the animation only runs once
-//       observer.unobserve(entry.target);
-//     }
-//   });
-// });
-
-// // Observe all elements
-// elements.forEach((element) => {
-//   observer.observe(element);
-// });
-
-var text = "Musician. Composer. Producer."
-var i = 0;
-function typeWriter() {
-  if (i < text.length) {
-    document.getElementById("typewriter").innerHTML += text.charAt(i);
-    i++;
-    setTimeout(typeWriter, 100);
+function doTypewriter(id, text) {
+  var i = 0;
+  const typeWriter = () => {
+    if (i < text.length) {
+      document.getElementById(id).innerHTML += text.charAt(i);
+      i++;
+      setTimeout(typeWriter, 100);
+    }
   }
+
+  typeWriter();
 }
 
-typeWriter();
+doTypewriter("hero-subtitle", "Musician. Composer. Beatmaker.");
